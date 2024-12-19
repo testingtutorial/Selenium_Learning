@@ -1,9 +1,13 @@
 package org.example;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.Iterator;
+import java.util.Set;
 
 public class DifferentActions {
 
@@ -17,6 +21,13 @@ public class DifferentActions {
         System.out.println(title);
 //        WebElement searchBox = driver.findElement(By.id("twotabsearchtextbox"));
 //        searchBox.sendKeys("Books");
+
+        Set<Cookie> cookies = driver.manage().getCookies();
+        Iterator itr = cookies.iterator();
+        while (itr.hasNext())
+        {
+            System.out.println(itr.next());
+        }
 
         //WebElement register = driver.findElement(By.xpath("//a[text()=\"Register\"]"));
         WebElement register = driver.findElement(By.linkText("Register"));

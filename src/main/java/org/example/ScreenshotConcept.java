@@ -8,6 +8,8 @@ import org.openqa.selenium.io.FileHandler;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ScreenshotConcept {
 
@@ -21,9 +23,15 @@ public class ScreenshotConcept {
         String title = driver.getTitle();
         System.out.println(title);
 
+        String filePath = "C:\\Users\\Administrator\\IdeaProjects\\SeleniumLearning\\src\\screenshot\\";
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        String time = dateFormat.format(new Date());
+        String fileName = "file_"+ time + ".png";
+        String fullPath = filePath + fileName;
+
         TakesScreenshot scn = (TakesScreenshot)driver;
         File source = scn.getScreenshotAs(OutputType.FILE);
-        File target = new File("C:\\Users\\Administrator\\IdeaProjects\\SeleniumLearning\\src\\screenshot\\screenshot.png");
+        File target = new File(fullPath);
         FileHandler.copy(source,target);
     }
 }
