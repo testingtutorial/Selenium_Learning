@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Selenium Learning">
-    <groups>
-        <run>
-            <include name="smoke"></include>
-        </run>
-    </groups>
+    <parameter name="a" value="10"/>
+    <parameter name="b" value="20"/>
+    <parameter name="course" value="Testing"/>
     <test name="Testing1">
         <classes>
-            <class name="org.example.TestBase"/>
+            <class name="org.example.ParameterizationConcept"/>
         </classes>
-    </test> <!-- Test -->
-    <test name="Testing2">
-        <classes>
-            <class name="org.example.TestBase1"/>
-        </classes>
-    </test> <!-- Test -->
-    <test name="Testing3">
-        <classes>
-            <class name="org.example.TestBase2"/>
-        </classes>
-    </test>
-    <test name="Testing4">
-        <classes>
-            <class name="org.example.GroupingConceptTestNG"/>
-        </classes>
-    </test> <!-- Test -->
+    </test><!-- Test -->
 </suite> <!-- Suite -->
