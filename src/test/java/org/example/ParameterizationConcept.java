@@ -1,7 +1,8 @@
 package org.example;
+import org.base.Base;
 import org.testng.annotations.*;
 
-public class ParameterizationConcept {
+public class ParameterizationConcept{
 
     @Test(priority = 1)
     @Parameters({"a","b"})

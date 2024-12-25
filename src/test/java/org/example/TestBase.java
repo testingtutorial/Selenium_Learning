@@ -1,7 +1,8 @@
 package org.example;
+import org.base.Base;
 import org.testng.annotations.*;
 
-public class TestBase {
+public class TestBase{
 
 
     @Test(priority = 1, enabled = false)

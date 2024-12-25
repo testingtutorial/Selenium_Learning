@@ -1,5 +1,7 @@
 package org.example;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -11,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Iterator;
 
 public class ReadingData {
 
@@ -36,30 +39,71 @@ public class ReadingData {
         FileInputStream fis = new FileInputStream(file);
         XSSFWorkbook workbook = new XSSFWorkbook(fis);
         XSSFSheet sheet = workbook.getSheet("Sheet1");
-        String firstName = sheet.getRow(1).getCell(0).toString();
-        String lastName = sheet.getRow(1).getCell(1).toString();
-        String address = sheet.getRow(1).getCell(2).toString();
-        String city = sheet.getRow(1).getCell(3).toString();
-        String state = sheet.getRow(1).getCell(4).toString();
-        String zipCode = sheet.getRow(1).getCell(5).toString();
-        String phone = sheet.getRow(1).getCell(6).toString();
-        String ssn = sheet.getRow(1).getCell(7).toString();
-        String userName = sheet.getRow(1).getCell(8).toString();
-        String password = sheet.getRow(1).getCell(9).toString();
-        String confirm = sheet.getRow(1).getCell(10).toString();
+//        String firstName = sheet.getRow(1).getCell(0).toString();
+//        String lastName = sheet.getRow(1).getCell(1).toString();
+//        String address = sheet.getRow(1).getCell(2).toString();
+//        String city = sheet.getRow(1).getCell(3).toString();
+//        String state = sheet.getRow(1).getCell(4).toString();
+//        String zipCode = sheet.getRow(1).getCell(5).toString();
+//        String phone = sheet.getRow(1).getCell(6).toString();
+//        String ssn = sheet.getRow(1).getCell(7).toString();
+//        String userName = sheet.getRow(1).getCell(8).toString();
+//        String password = sheet.getRow(1).getCell(9).toString();
+//        String confirm = sheet.getRow(1).getCell(10).toString();
+//
+//        System.out.println(firstName);
+//        System.out.println(lastName);
+//        System.out.println(address);
+//        System.out.println(city);
+//        System.out.println(state);
+//        System.out.println(zipCode);
+//        System.out.println(phone);
+//        System.out.println(ssn);
+//        System.out.println(userName);
+//        System.out.println(password);
+//        System.out.println(confirm);
 
-        System.out.println(firstName);
-        System.out.println(lastName);
-        System.out.println(address);
-        System.out.println(city);
-        System.out.println(state);
-        System.out.println(zipCode);
-        System.out.println(phone);
-        System.out.println(ssn);
-        System.out.println(userName);
-        System.out.println(password);
-        System.out.println(confirm);
+        Iterator<Row> rowIterator = sheet.iterator();
 
+        // Till there is an element condition holds true
+        while (rowIterator.hasNext()) {
+
+            Row row = rowIterator.next();
+
+            // For each row, iterate through all the
+            // columns
+            Iterator<Cell> cellIterator
+                    = row.cellIterator();
+
+            while (cellIterator.hasNext()) {
+
+                Cell cell = cellIterator.next();
+
+                // Checking the cell type and format
+                // accordingly
+                switch (cell.getCellType()) {
+
+                    // Case 1
+//                    case Cell.CELL_TYPE_NUMERIC:
+//                        System.out.print(
+//                                cell.getNumericCellValue()
+//                                        + "t");
+//                        break;
+
+                    // Case 2
+//                    case Cell.CELL_TYPE_STRING:
+//                        System.out.print(
+//                                cell.getStringCellValue()
+//                                        + "t");
+//                        break;
+                }
+            }
+
+            System.out.println("");
+        }
+
+        // Closing file output streams
+        //file.close();
 
 
 

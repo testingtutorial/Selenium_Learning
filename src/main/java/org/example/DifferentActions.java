@@ -13,7 +13,7 @@ public class DifferentActions {
 
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Administrator\\IdeaProjects\\SeleniumLearning\\src\\main\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","src/drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("https://parabank.parasoft.com/");
         driver.manage().window().maximize();
