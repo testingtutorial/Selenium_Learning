@@ -1,5 +1,6 @@
 package org.example;
 import org.base.Base;
+import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class TestBase{
@@ -27,6 +28,7 @@ public class TestBase{
     public void bcd()
     {
         System.out.println("bcd");
+        Assert.assertEquals(0,1);
     }
 
 }

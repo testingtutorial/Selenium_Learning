@@ -1,5 +1,7 @@
-package org.example;
+package org.testcases;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.base.Base;
 import org.pages.LoginPage;
 import org.testng.annotations.*;
@@ -7,6 +9,7 @@ import org.testng.annotations.*;
 public class LoginTest extends Base {
 
     LoginPage loginPage;
+    private static final Logger log = LogManager.getLogger(LoginTest.class);
 
     public LoginTest()
     {
@@ -18,6 +21,8 @@ public class LoginTest extends Base {
     {
         initialize();
         loginPage = new LoginPage();
+        log.info("Initializing browser");
+        log.error("Getting Error");
 
     }
 
@@ -25,5 +30,7 @@ public class LoginTest extends Base {
     public void loginIntoApplication()
     {
         loginPage.login("user1","password");
+        log.info("Login into para soft bank application");
+        log.debug("Debuging");
     }
 }

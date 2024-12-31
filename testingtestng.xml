@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Selenium Learning">
+    <listeners>
+        <listener class-name="org.listeners.ExtentReportListener"/>
+    </listeners>
     <test name="Login">
         <classes>
-            <class name="org.example.LoginTest"/>
+            <class name="org.testcases.LoginTest"/>
+            <class name="org.example.TestBase"/>
         </classes>
     </test>
 </suite> <!-- Suite -->
